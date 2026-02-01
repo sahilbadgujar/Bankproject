@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class TransactionDAOImpl implements TransactionDAO {
     public int addTransaction(Transactions transaction) throws SQLException {
         // TODO Auto-generated method setDouble
         String sql="INSERT INTO transactions(account_id, amount,transaction_date, transaction_type) VALUES(?,?,?,?)";
-        PreparedStatement ps = connection.prepareStatement(sql);
+        PreparedStatement ps = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
         ps.setInt(1, transaction.getAccountId());
         ps.setDouble(2,transaction.getAmount());
         ps.setTimestamp(3, new Timestamp(transaction.getTransactionDate().getTime()));

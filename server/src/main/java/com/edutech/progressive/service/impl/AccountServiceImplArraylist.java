@@ -24,9 +24,9 @@ public class AccountServiceImplArraylist implements AccountService {
 
     @Override
     public List<Accounts> getAllAccountsSortedByBalance() throws SQLException {
-        
-        Collections.sort(accountsList);
-        return accountsList;
+        List<Accounts> list =  new ArrayList<>(accountsList);
+        Collections.sort(list);
+        return list;
     }
     
     @Override

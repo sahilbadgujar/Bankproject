@@ -85,7 +85,7 @@ public class CustomerDAOImpl implements CustomerDAO{
     public List<Customers> getAllCustomers() throws SQLException {
         // TODO Auto-generated method setDouble
         List<Customers> list = new ArrayList<>();
-        String sql="SELECT * FROM cutomers";
+        String sql="SELECT * FROM customers";
         PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
@@ -100,8 +100,8 @@ public class CustomerDAOImpl implements CustomerDAO{
     @Override
     public CustomerAccountInfo getCustomerAccountInfo(int customerId) throws SQLException {
         // TODO Auto-generated method setDouble
-        String sql="SELECT c.customer_id , c.name,c.email,a.account_id,a.balance "+ 
-        "FROM customers c JOIN  accounts a ON c.customer_id = a.customer_id"+
+        String sql="SELECT c.customer_id , c.name,c.email,a.account_id,a.balance " + 
+        "FROM customers c JOIN  accounts a ON c.customer_id = a.customer_id " +
         "WHERE c.customer_id=?"
         ;
         PreparedStatement ps = connection.prepareStatement(sql);

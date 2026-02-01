@@ -42,6 +42,7 @@ public class AccountServiceImpl implements AccountService  {
     public List<Accounts> getAllAccountsSortedByBalance() throws SQLException {
         List<Accounts> accounts = accountDAO.getAllAccounts();
         // accounts.sort(accounts,Comparator.comparingDouble(Accounts::getBalance));
+        accounts.sort((a,b) -> Double.compare(a.getBalance(), b.getBalance()) );
         return accounts;
     }
 

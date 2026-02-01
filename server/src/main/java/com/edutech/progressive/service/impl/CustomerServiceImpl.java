@@ -20,31 +20,36 @@ public class CustomerServiceImpl implements CustomerService  {
     @Override
     public List<Customers> getAllCustomers() throws SQLException {
         // TODO Auto-generated method stub
-        List<Customers> list = new ArrayList<>();
-        return list;
+        // List<Customers> list = new ArrayList<>();
+        // return list;
+        return customerDAO.getAllCustomers();
     }
 
     @Override
     public int addCustomer(Customers customers) throws SQLException {
         // TODO Auto-generated method stub
-        return -1;
+        // return -1;
+        return customerDAO.addCustomer(customers);
     }
 
     @Override
     public List<Customers> getAllCustomersSortedByName() throws SQLException {
         // TODO Auto-generated method stub
-        List<Customers> list = new ArrayList<>();
+        // List<Customers> list = new ArrayList<>();
+        // return list;
+        List<Customers> list = customerDAO.getAllCustomers();
+        list.sort((a,b) -> a.getName().compareToIgnoreCase(b.getName()));
         return list;
-    }
+     }
 
     public void updateCustomer(Customers customers) throws SQLException{
-
+            customerDAO.updateCustomer(customers);
     }
     public void deleteCustomer(int customerId)throws SQLException{
-   
+           customerDAO.deleteCustomer(customerId);
     }
     public Customers getCustomerById(int customerId) throws SQLException{
-        return null;
+          return customerDAO.getCustomerById(customerId);
     }
 
 }
