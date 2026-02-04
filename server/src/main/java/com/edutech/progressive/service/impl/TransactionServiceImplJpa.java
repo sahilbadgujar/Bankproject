@@ -16,7 +16,7 @@ public class TransactionServiceImplJpa {
     public TransactionServiceImplJpa(TransactionRepository transactionRepo) {
         this.transactionRepo = transactionRepo;
     }
-    
+
     public List<Transactions> getAllTransactions(){
         return transactionRepo.findAll();
     }
@@ -36,7 +36,7 @@ public class TransactionServiceImplJpa {
     public void deleteTransaction(int transactionId){
         transactionRepo.deleteById(transactionId);
     }
-    public List<Transactions> geTransactionsByCustomerId(int customerId){
+    public List<Transactions> getTransactionsByCustomerId(int customerId){
         // return transactionRepo.findByAccountCustomerCustomerId(customerId);
         return null;
     }
