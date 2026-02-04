@@ -89,7 +89,8 @@ public class TransactionServiceImplJpa implements TransactionService {
 
     @Override
     public List<Transactions> getTransactionsByCustomerId(int customerId) throws SQLException {
-        return transactionRepo.findByAccountsCustomerCustomerId(customerId);
+        // return transactionRepo.findByAccountsCustomerCustomerId(customerId);
+        return null;
     }
 }
 
