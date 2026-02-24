@@ -28,4 +28,14 @@ public class CustomerServiceImplArraylist {
     public void emptyArrayList() {
         customersList.clear();
     }
+
+    public Customers getCustomerById(int id){
+        for(Customers c : customersList)
+        {
+            if(c.getCustomerId() == id)
+                return c;
+        }
+
+        return null;
+    }
 }

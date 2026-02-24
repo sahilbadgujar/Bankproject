@@ -31,4 +31,15 @@ public class AccountServiceImplArraylist {
     public void emptyArrayList() {
         accountsList.clear();
     }
+
+    public Accounts getAccountById(int id){
+        for(Accounts a : accountsList)
+        {
+            if(a.getAccountId() == id)
+            {
+                return a;
+            }
+        }
+        return null;
+    }
 }

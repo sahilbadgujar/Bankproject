@@ -12,6 +12,9 @@ import com.edutech.progressive.service.AccountService;
 
 public class AccountServiceImpl implements AccountService  {
     private AccountDAO accountDAO;
+    
+    public AccountServiceImpl() {
+    }
     public AccountServiceImpl(AccountDAO accountDAO){
         this.accountDAO = accountDAO;
     }
@@ -54,6 +57,9 @@ public class AccountServiceImpl implements AccountService  {
     // public List<Accounts> getAccountsByUser(int userId) throws SQLException {
     //     return accountDAO.getAllAccountsByCustomer(userId);
     // }
+    public void setAccountDAO(AccountDAO accountDAO) {
+        this.accountDAO = accountDAO;
+    }
 
 
 }

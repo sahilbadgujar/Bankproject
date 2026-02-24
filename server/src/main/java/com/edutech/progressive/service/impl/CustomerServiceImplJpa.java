@@ -61,7 +61,10 @@ import com.edutech.progressive.service.CustomerService;
 @Service
 public class CustomerServiceImplJpa implements CustomerService {
 
-    private final CustomerRepository custRepo;
+    private  CustomerRepository custRepo;
+
+    public CustomerServiceImplJpa() {
+    }
 
     public CustomerServiceImplJpa(CustomerRepository custRepo) {
         this.custRepo = custRepo;

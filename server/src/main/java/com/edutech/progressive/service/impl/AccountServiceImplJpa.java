@@ -59,7 +59,10 @@ import com.edutech.progressive.service.AccountService;
 @Service
 public class AccountServiceImplJpa implements AccountService {
 
-    private final AccountRepository accRepo;
+    private  AccountRepository accRepo;
+
+    public AccountServiceImplJpa() {
+    }
 
     public AccountServiceImplJpa(AccountRepository accRepo) {
         this.accRepo = accRepo;
